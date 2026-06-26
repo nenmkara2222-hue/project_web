@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="./src/output.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="shortcut icon" href="./images/bro7.jpg" type="image/x-icon">
+  <meta name="keywords" content="buy games online, cheap game keys, digital game store, PC games download, PlayStation games, Xbox games, Nintendo Switch games, mobile games download, instant game key delivery, discount video games, best game deals, online gaming store, trusted game seller, safe game downloads, gaming marketplace, affordable games online, fast game hosting, secure gaming website, VPS hosting for gaming, cloud game hosting,">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>Lexstro</title>
+<meta name="description" content="Shop smarter with LEXSTRO, your trusted gaming store for premium gear and the latest games. Browse top-quality gaming accessories,">
+<meta property="og:url" content="https://clever-raindrop-372347.netlify.app/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lexstro">
+<meta property="og:description" content="Shop smarter with LEXSTRO, your trusted gaming store for premium gear and the latest games. Browse top-quality gaming accessories,">
+<meta property="og:image" content="bro6.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:domain" content="clever-raindrop-372347.netlify.app">
+<meta property="twitter:url" content="https://clever-raindrop-372347.netlify.app/">
+<meta name="twitter:title" content="Lexstro">
+<meta name="twitter:description" content="Shop smarter with LEXSTRO, your trusted gaming store for premium gear and the latest games. Browse top-quality gaming accessories,">
+<meta name="twitter:image" content="bro6.png">
+
+  
+  <style>
+       .card-wrap { position: relative; }
+     .eye-btn {
+      position: absolute; top: 8px; right: 8px;
+      background: rgba(46, 1, 72, 0.873); color: gainsboro;
+      border: none; border: 1px solid rgb(0, 0, 0); border-radius: 10%; width: 54px; height: 32px;
+      font-size: 15px; cursor: pointer; display: flex;
+      align-items: center; justify-content: center;
+      backdrop-filter: blur(4px); transition: background 0.2s; z-index: 2;
+    }
+    
+  </style>
+</head>
+
+<body class="min-h-screen bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100 transition-colors duration-300">
+
+ <header>
+   <nav class="bg-white dark:bg-gray-950 border-b border-gray-200 dark:border-gray-800 sticky top-0 z-50">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="brand text-xl text-purple-600 dark:text-purple-400 font-bold tracking-widest">LEXSTRO</a>
+      <ul class="hidden md:flex gap-6 text-sm font-semibold list-none">
+        <li><a href="index.html"   class="nav-link active-link">Home</a></li>
+        <li><a href="./pages/games.html"   class="nav-link">Games</a></li>
+        <li><a href="./pages/gear.html"    class="nav-link">Gear</a></li>
+        <li><a href="./pages/about.html"   class="nav-link">About Us</a></li>
+        <li><a href="./pages/contact.html" class="nav-link">Contact</a></li>
+        <li><a href="./pages/login.html" class="nav-link">Login/Register</a></li>
+      </ul>
+      <div class="flex items-center gap-2">
+        <button onclick="toggleTheme()" aria-label="Toggle theme" class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-purple-100 dark:hover:bg-purple-900 transition-colors">
+          <span id="theme-icon">
+            <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </span>
+        </button>
+        <button onclick="openCart()" class="cart-count bg-purple-600 hover:bg-purple-500 text-white text-xs px-3 py-1.5 rounded font-semibold transition-colors flex items-center gap-1">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          Cart (0)
+        </button>
+        </button>
+          <button onclick="toggleMenu()" aria-label="Toggle menu" class="md:hidden w-8 h-8 rounded bg-gray-100 dark:bg-gray-800 text-lg">
+          <span id="ham">☰</span>
+        </button>
+        
+      </div>
+    </div>
+    <ul id="mob-menu" class="mob-menu md:hidden px-4 pb-3 pt-2 border-t border-gray-100 dark:border-gray-800 flex-col gap-3 text-sm font-semibold list-none">
+      <li><a href="index.html"   class="block text-gray-600 dark:text-gray-300 hover:text-purple-500"> Home</a></li>
+      <li><a href="./pages/games.html"   class="block text-gray-600 dark:text-gray-300 hover:text-purple-500"> Games</a></li>
+      <li><a href="./pages/gear.html"    class="block text-gray-600 dark:text-gray-300 hover:text-purple-500"> Gear</a></li>
+      <li><a href="./pages/about.html"   class="block text-gray-600 dark:text-gray-300 hover:text-purple-500"> About Us</a></li>
+      <li><a href="./pages/contact.html" class="block text-gray-600 dark:text-gray-300 hover:text-purple-500">Contact</a></li>
+       <li><a href="./pages/login.html" class="block text-gray-600 dark:text-gray-300 hover:text-purple-500"> Login/Register</a></li>
+    </ul>
+  </nav>
+ </header>
+
+  <main>
+
+    <section class="bg-gradient-to-br from-purple-50 to-gray-100 dark:from-gray-900 dark:to-gray-950 py-16 text-center px-4 fade-up delay-2">
+      <p class="text-purple-500 text-xl tracking-widest uppercase mb-2 fade-up delay-2">Welcome to the</p>
+      <h1 class="brand text-5xl font-bold text-purple-600 dark:text-purple-400 mb-3 fade-up delay-2">LEXSTRO</h1>
+      <p class="text-gray-500 dark:text-gray-400 text-xl mb-6 fade-up delay-2">Your ultimate gaming destination — games, gear & great deals.</p>
+      <div class="flex justify-center gap-3 flex-wrap fade-up delay-2">
+        <a href="./pages/games.html" class="bg-purple-600 hover:bg-purple-500 text-white px-5 py-2 rounded text-sm font-semibold transition-colors">Browse Games</a>
+        <a href="./pages/about.html" class="border border-purple-500 text-purple-600 dark:text-purple-300 hover:bg-purple-50 dark:hover:bg-purple-900 px-5 py-2 rounded text-sm font-semibold transition-colors">About Us</a>
+      </div>
+    </section>
+
+    <section class="max-w-5xl mx-auto px-4 py-10  fade-up delay-2 ">
+      <h2 class="brand text-lg text-purple-600 dark:text-purple-400 font-bold mb-5">Featured This Week</h2>
+      <ul class="grid grid-cols-2 md:grid-cols-4 gap-4 list-none">
+        <li><article class="card">
+          <div class="card-wrap">
+            <img src="https://i.pinimg.com/736x/d3/a8/3f/d3a83fd5f37d8d431cf44cfb93f9684b.jpg" alt="Shadow Realm" class="card-img"/>
+            <button class="eye-btn" onclick="openPreview('GTA6', 50.00, 'AAO', 'GTA 6 TRAILER - VICE City Returns.', true)">Preview</button>
+          </div>
+          <div class="p-3 fade-up delay-2">
+            <h3 class="font-semibold text-xl">GTA6</h3>
+            <p class="text-gray-400 text-2xs">AAO</p>
+            <p class="text-purple-600 dark:text-purple-400 font-bold text-sm mt-1">$50.00</p>
+          </div>
+        </article></li>
+
+        <li><article class="card">
+          <div class="card-wrap">
+            <img src="https://i.pinimg.com/1200x/f7/63/e8/f763e85539d583b99ba593b38c71af57.jpg" alt="Iron Strike" class="card-img"/>
+            <button class="eye-btn" onclick="openPreview('Dragon Dogma', 29.99, 'RPG', 'TEST Dragon Dogma 2: une aventure fantastipue pui dame le pion des plus grands RPG', true)">Preview</button>
+          </div>
+          <div class="p-3 fade-up delay-2">
+            <h3 class="font-semibold text-xl">Dragon's Dogma 2</h3>
+            <p class="text-gray-400 text-xs">FPS</p>
+            <p class="text-purple-600 dark:text-purple-400 font-bold text-sm mt-1">$29.99</p>
+          </div>
+        </article></li>
+        <li><article class="card">
+          <div class="card-wrap">
+            <img src="https://i.pinimg.com/736x/9f/3d/96/9f3d961ac4706f3e2648cc13c347c19c.jpg" alt="Terra Build" class="card-img"/>
+            <button class="eye-btn" onclick="openPreview('The spike', 19.99, 'Sport', 'The spike volleyball.', true)">Preview</button>
+          </div>
+          <div class="p-3 fade-up delay-2">
+            <h3 class="font-semibold text-sm">The spike</h3>
+            <p class="text-gray-400 text-xs">Sport</p>
+            <p class="text-purple-600 dark:text-purple-400 font-bold text-sm mt-1">$19.99</p>
+          </div>
+        </article></li>
+        <li><article class="card">
+          <div class="card-wrap">
+            <img src="https://i.pinimg.com/736x/f8/df/d3/f8dfd3d04e1d90759208d2b7aa4ac9f0.jpg" alt="Velocity X" class="card-img"/>
+            <button class="eye-btn" onclick="openPreview('Manor lords', 24.99, 'strategy', 'Push the limits of speed in hyper-realistic street and track racing. Customize your dream car from 200+ models, race online against rivals worldwide, and climb the global leaderboard.', true)">Preview</button>
+          </div>
+          <div class="p-3 fade-up delay-2">
+            <h3 class="font-semibold text-sm">Manor lords</h3>
+            <p class="text-gray-400 text-xs">strategy</p>
+            <p class="text-purple-600 dark:text-purple-400 font-bold text-sm mt-1">$24.99</p>
+          </div>
+        </article></li>
+      </ul>
+    </section>
+
+    <section class="bg-gray-50  dark:bg-gray-900 py-10 fade-up delay-2 ">
+      <div class="max-w-5xl mx-auto px-4 text-center">
+        <h2 class="brand text-lg text-purple-600 dark:text-purple-400 font-bold mb-6">Why Choose LEXSTRO?</h2>
+        <ul class=" grid grid-cols-2 md:grid-cols-4 gap-4 list-none">
+          <li>
+            <div class="flex justify-center mb-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-purple-500"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 12h.01"/><path d="M17 12h.01"/><path d="M7 12h.01"/></svg>
+            </div>
+            <p class="font-semibold text-sm">500+ Games</p><p class="text-gray-400 text-xs">All genres</p>
+          </li>
+          <li>
+            <div class="flex justify-center mb-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-purple-500"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <p class="font-semibold text-sm">Instant Keys</p><p class="text-gray-400 text-xs">Digital delivery</p>
+          </li>
+          <li>
+            <div class="flex justify-center mb-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-purple-500"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <p class="font-semibold text-sm">Secure Pay</p><p class="text-gray-400 text-xs">Encrypted checkout</p>
+          </li>
+          <li>
+            <div class="flex justify-center mb-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-purple-500"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <p class="font-semibold text-sm">24/7 Support</p><p class="text-gray-400 text-xs">Always here</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="max-w-5xl mx-auto px-4 py-10 fade-up delay-2">
+      <div class="flex items-center justify-between mb-5 flex-wrap gap-2">
+        <h2 class="brand text-lg text-purple-600 dark:text-purple-400 font-bold flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 12h.01"/><path d="M17 12h.01"/><path d="M7 12h.01"/></svg>
+          Gaming Gear
+        </h2>
+        <a href="./pages/gear.html" class="text-purple-500 text-xs hover:underline">Shop gear →</a>
+      </div>
+      <ul class="grid grid-cols-2 md:grid-cols-4 gap-4 list-none">
+        <li><article class="card text-center">
+          <div class="bg-gradient-to-br from-purple-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 flex items-center justify-center">
+            <img src="https://imgs.search.brave.com/etWofA8ZLGxJ3nK0DFjohyu1FthsaLX3RSz1MeUX_Iw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YXN1cy5jb20vY2Et/ZW4vc2l0ZS9nYW1p/bmcvYXNzZXRzL2lt/YWdlcy9yb2cvUk9H/LUFsbHkvaGVyby53/ZWJw" alt="404">
+          </div>
+          <div class="p-3">
+            <h3 class="font-semibold text-xl">ROG Ally X</h3>
+            <p class="text-gray-400 text-xs">Wireless, 40h battery</p>
+            <p class="text-purple-600 dark:text-purple-400 font-bold text-sm mt-1">$899.99</p>
+          </div>
+        </article></li>
+        <li><article class="card text-center">
+          <div class="bg-gradient-to-br from-purple-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 flex items-center justify-center">
+            <img src="https://imgs.search.brave.com/mHg2_2jHFBh9uTifFzzv6nwRlnP8Ty6Pl3EVV5-3udQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/bW9zLmNtcy5mdXR1/cmVjZG4ubmV0L0pr/ckR2Y2RvazhtYXFT/OE1iOVdrelUuanBn" alt="505">
+          </div>
+          <div class="p-3">
+            <h3 class="font-semibold text-sm">Gaming Headset</h3>
+            <p class="text-gray-400 text-xs">7.1 Surround Sound</p>
+            <p class="text-purple-600 dark:text-purple-400 font-bold text-sm mt-1">$79.99</p>
+          </div>
+        </article></li>
+        <li><article class="card text-center">
+          <div class="bg-gradient-to-br from-purple-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 flex items-center justify-center">
+          </div>
+            <img src="https://cdn.mos.cms.futurecdn.net/QBDk4okw3wncRm8hkCwhTe-1920-80.jpg" alt="606">
+          <div class="p-3">
+            <h3 class="font-semibold text-sm">RGB Keyboard</h3>
+            <p class="text-gray-400 text-xs">Mechanical switches</p>
+            <p class="text-purple-600 dark:text-purple-400 font-bold text-sm mt-1">$89.99</p>
+          </div>
+        </article></li>
+        <li><article class="card text-center">
+          <div class="bg-gradient-to-br from-purple-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 flex items-center justify-center">
+            <img src="https://s.yimg.com/ny/api/res/1.2/Y14.lG9rPZan37W6RiCHRQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTI0MDA7aD0xMzUw/https://media.zenfs.com/en/windows_central_293/83206d3d3d712ce252aab9541c7780c7" alt="707">
+          </div>
+          <div class="p-3">
+            <h3 class="font-semibold text-sm">RAZER Gaming Chair</h3>
+            <p class="text-gray-400 text-xs">16000 DPI, 6 buttons</p>
+            <p class="text-purple-600 dark:text-purple-400 font-bold text-sm mt-1">$44.99</p>
+          </div>
+        </article></li>
+      </ul>
+    </section>
+
+
+    <section class="bg-gray-50 dark:bg-gray-900 py-10 fade-up delay-2 flex items-center justify-center mx-auto px-4 py-12 text-center​  fade-up delay-2">
+      <div class=" rounded-2xl p-8 ">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-purple-500 mx-auto mb-3"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <h2 class="brand text-xl font-bold  mb-2">Stay in the Game</h2>
+        <p class=" text-sm mb-5">Get exclusive deals, new release alerts, and gaming news straight to your inbox.</p>
+        <div class="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
+          <input type="email" placeholder="Enter your email address" class="flex-1 border border-purple-500 text-purple-600 dark:text-purple-300 hover:bg-purple-50 dark:hover:bg-purple-900 px-5 py-2 rounded text-sm font-semibold transition-colors"/>
+          <button class=" bg-fuchsia-400  font-bold text-sm px-5 py-2 rounded hover:bg-purple-500 transition-colors whitespace-nowrap">Subscribe</button>
+        </div>
+        <p class=" text-xs mt-3">No spam, ever. Unsubscribe anytime.</p>
+      </div>
+    </section>
+
+  </main>
+
+ 
+<footer class="bg-gray-100 dark:bg-gray-950 border-t border-gray-300 dark:border-gray-800 pt-12 pb-6">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
+
+        <div>
+          <p class="text-xs text-gray-500 uppercase tracking-widest mb-3">Organized by</p>
+          <a href="index.html" class="brand text-2xl font-bold text-purple-400 tracking-widest">LEXSTRO</a>
+          <p class="text-gray-500 text-xs mt-2 leading-relaxed">Your ultimate gaming destination — games, gear &amp; great deals.</p>
+        </div>
+
+        <div>
+          <p class="text-xs text-gray-500 uppercase tracking-widest mb-3">Our Partner</p>
+          <img width="100px" src="https://www.cstad.edu.kh/_next/image?url=%2Fschool-logo%2Fistad-lms-logo.png&w=256&q=75" alt="istad">
+        </div>
+
+        <div>
+          <p class="text-xs text-gray-500 uppercase tracking-widest mb-3">Quick Links</p>
+          <ul class="space-y-2 list-none">
+            <li><a href="index.html"   class="text-gray-400 hover:text-purple-400 text-sm transition-colors">Home</a></li>
+            <li><a href="./pages/games.html"   class="text-gray-400 hover:text-purple-400 text-sm transition-colors">Games</a></li>
+            <li><a href="./pages/gear.html"    class="text-gray-400 hover:text-purple-400 text-sm transition-colors">Gear</a></li>
+            <li><a href="./pages/about.html"   class="text-gray-400 hover:text-purple-400 text-sm transition-colors">About Us</a></li>
+            <li><a href="./pages/contact.html" class="text-gray-400 hover:text-purple-400 text-sm transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="text-xs text-gray-500 uppercase tracking-widest mb-3">Contact Us</p>
+          <ul class="space-y-2 list-none">
+            <li class="flex items-center gap-2 text-gray-400 text-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+             <a href="mailto:lexstro@gmail.com"> lexstro@gmail.com</a>
+            </li>
+            <li class="flex items-center gap-2 text-gray-400 text-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.1a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:0714097399">+855 714 097 399</a>
+            </li>
+            <li class="flex items-center gap-2 text-gray-400 text-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Phnom Penh, Cambodia
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="border-t border-gray-800 pt-5 flex flex-col md:flex-row justify-between items-center gap-2">
+        <p class="text-gray-600 text-xs">© 2026 LEXSTRO Gaming Store. All rights reserved.</p>
+        <div class="flex gap-4">
+          <a href="#" class="text-gray-600 hover:text-purple-400 text-xs transition-colors">Privacy Policy</a>
+          <a href="#" class="text-gray-600 hover:text-purple-400 text-xs transition-colors">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./pages/script.js"></script>
+</body>
+</html>

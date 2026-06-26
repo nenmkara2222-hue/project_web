@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LEXSTRO</title>
+  <link rel="stylesheet" href="../src/output.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../style.css"/>
+
+   
+</head>
+
+<body class="min-h-screen bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100 transition-colors duration-300">
+
+  <nav class="bg-white dark:bg-gray-950 border-b border-gray-200 dark:border-gray-800 sticky top-0 z-50">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="../index.html" class="brand text-xl text-purple-600 dark:text-purple-400 font-bold tracking-widest">LEXSTRO</a>
+      <ul class="hidden md:flex gap-6 text-sm font-semibold list-none">
+        <li><a href="../index.html"   class="nav-link">Home</a></li>
+        <li><a href="games.html"   class="nav-link">Games</a></li>
+        <li><a href="gear.html"    class="nav-link">Gear</a></li>
+        <li><a href="about.html"   class="nav-link">About Us</a></li>
+        <li><a href="contact.html" class="nav-link ">Contact</a></li>
+        <li><a href="login.html" class="nav-link active-link">Login/Register</a></li>
+      </ul>
+      <div class="flex items-center gap-2">
+        <button onclick="toggleTheme()" aria-label="Toggle theme" class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-purple-100 dark:hover:bg-purple-900 transition-colors">
+          <span id="theme-icon">🌙</span>
+        </button>
+        <button class="bg-purple-600 hover:bg-purple-500 text-white text-xs px-3 py-1.5 rounded font-semibold transition-colors">
+          🛒 Cart (0)
+        </button>
+        <button onclick="toggleMenu()" aria-label="Toggle menu" class="md:hidden w-8 h-8 rounded bg-gray-100 dark:bg-gray-800 text-lg">
+          <span id="ham">☰</span>
+        </button>
+      </div>
+    </div>
+    <ul id="mob-menu" class="mob-menu md:hidden px-4 pb-3 pt-2 border-t border-gray-100 dark:border-gray-800 flex-col gap-3 text-sm font-semibold list-none">
+      <li><a href="../index.html"   class="block text-gray-600 dark:text-gray-300 hover:text-purple-500"> Home</a></li>
+      <li><a href="games.html"   class="block text-gray-600 dark:text-gray-300 hover:text-purple-500"> Games</a></li>
+      <li><a href="gear.html"    class="block text-gray-600 dark:text-gray-300 hover:text-purple-500"> Gear</a></li>
+      <li><a href="about.html"   class="block text-gray-600 dark:text-gray-300 hover:text-purple-500"> About Us</a></li>
+      <li><a href="contact.html" class="block text-gray-600 dark:text-gray-300 hover:text-purple-500"> Contact</a></li>
+       <li><a href="login.html" class="block text-gray-600 dark:text-gray-300 hover:text-purple-500"> Login/Register</a></li>
+    </ul>
+  </nav>
+    <main
+      class="flex-1 flex items-center justify-center px-4 py-16 relative overflow-hidden glow"
+    >
+      <div
+        class="w-full max-w-md bg-white dark:bg-gray-900 bg-opacity-90 dark:bg-opacity-85 border border-gray-200 dark:border-gray-800 rounded-2xl p-10 backdrop-blur-md fade-up card-line relative z-10 shadow-sm"
+      >
+        <p
+          class="text-xs text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-1"
+        >
+          Welcome back
+        </p>
+        <h1
+          class="brand text-2xl text-purple-600 dark:text-purple-400 font-bold mb-1"
+        >
+          SIGN IN
+        </h1>
+        <p class="text-gray-500 dark:text-gray-500 text-sm mb-8">
+          Log in to your LEXSTRO account to continue.
+        </p>
+
+        <div class="grid grid-cols-2 gap-3 mb-6">
+          <button
+            onclick="socialLogin('Google')"
+            class="flex items-center justify-center gap-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700 hover:border-purple-400 dark:hover:border-purple-600 text-gray-700 dark:text-gray-300 text-sm py-2 rounded-lg transition-colors font-semibold"
+          >
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                fill="#4285F4"
+              />
+              <path
+                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                fill="#34A853"
+              />
+              <path
+                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                fill="#FBBC05"
+              />
+              <path
+                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                fill="#EA4335"
+              />
+            </svg>
+            Google
+          </button>
+          <button
+            onclick="socialLogin('Discord')"
+            class="flex items-center justify-center gap-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700 hover:border-purple-400 dark:hover:border-purple-600 text-gray-700 dark:text-gray-300 text-sm py-2 rounded-lg transition-colors font-semibold"
+          >
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="#5865F2"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.003.022.014.043.03.056a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"
+              />
+            </svg>
+            Discord
+          </button>
+        </div>
+        <div class="flex items-center gap-3 mb-5">
+          <div class="flex-1 h-px bg-gray-200 dark:bg-gray-800"></div>
+          <span class="text-xs text-gray-400 dark:text-gray-600"
+            >or continue with email</span
+          >
+          <div class="flex-1 h-px bg-gray-200 dark:bg-gray-800"></div>
+        </div>
+
+        <form id="login-form" onsubmit="handleLogin(event)" novalidate>
+          <div class="mb-5">
+            <label
+              class="block text-xs text-gray-500 dark:text-gray-400 font-semibold mb-1 uppercase tracking-wider"
+              >Email Address</label
+            >
+            <div class="relative">
+              <svg
+                class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+              </svg>
+              <input
+                id="email"
+                type="email"
+                placeholder="gamer@example.com"
+                autocomplete="email"
+                class="w-full bg-white dark:bg-gray-950 border border-gray-200 dark:border-gray-700 focus:border-purple-500 dark:focus:border-purple-600 text-gray-900 dark:text-gray-100 text-sm pl-9 pr-3 py-2.5 rounded-lg outline-none transition-colors font-semibold"
+                style="font-family: &quot;Rajdhani&quot;, sans-serif"
+              />
+            </div>
+            <p class="field-error" id="email-err">
+              Please enter a valid email address.
+            </p>
+          </div>
+
+          <div class="mb-5">
+            <label
+              class="block text-xs text-gray-500 dark:text-gray-400 font-semibold mb-1 uppercase tracking-wider"
+              >Password</label
+            >
+            <div class="relative">
+              <svg
+                class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="3" y="11" width="18" height="11" rx="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg>
+              <input
+                id="password"
+                type="password"
+                placeholder="••••••••"
+                autocomplete="current-password"
+                class="w-full bg-white dark:bg-gray-950 border border-gray-200 dark:border-gray-700 focus:border-purple-500 dark:focus:border-purple-600 text-gray-900 dark:text-gray-100 text-sm pl-9 pr-10 py-2.5 rounded-lg outline-none transition-colors font-semibold"
+                style="font-family: &quot;Rajdhani&quot;, sans-serif"
+              />
+              <button
+                type="button"
+                onclick="togglePassword()"
+                class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500 hover:text-purple-500 dark:hover:text-purple-400 transition-colors"
+              >
+                <svg
+                  id="eye-icon"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z" />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+              </button>
+            </div>
+            <p class="field-error" id="pw-err">
+              characters.
+            </p>
+          </div>
+
+          <div class="flex items-center justify-between mb-6">
+            <label
+              class="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400 cursor-pointer"
+            >
+              <input type="checkbox" class="accent-purple-600 w-3.5 h-3.5" />
+              Remember me
+            </label>
+            <a
+              href="#"
+              class="text-xs text-purple-600 dark:text-purple-500 hover:text-purple-400 transition-colors"
+              >Forgot password?</a
+            >
+          </div>
+
+          <button
+            type="submit"
+            id="login-btn"
+            class="brand w-full py-2.5 bg-gradient-to-r from-purple-700 to-purple-500 hover:opacity-90 text-white text-sm font-bold tracking-widest rounded-lg transition-opacity"
+          >
+            LOGIN
+          </button>
+        </form>
+
+        <div class="flex items-center gap-3 my-5">
+          <div class="flex-1 h-px bg-gray-200 dark:bg-gray-800"></div>
+          <div class="flex-1 h-px bg-gray-200 dark:bg-gray-800"></div>
+        </div>
+
+        <p class="text-center text-xs text-gray-500 dark:text-gray-500">
+          Don't have an account?
+          <a
+            href="register.html"
+            class="text-purple-600 dark:text-purple-400 hover:text-purple-400 dark:hover:text-purple-300 font-semibold transition-colors"
+            >Create one</a
+          >
+        </p>
+      </div>
+    </main>
+
+    <div class="toast" id="toast"></div>
+
+    <footer
+      class="bg-gray-100 dark:bg-gray-950 border-t border-gray-300 dark:border-gray-800 pt-12 pb-6"
+    >
+      <div class="max-w-5xl mx-auto px-4">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
+          <div>
+            <p class="text-xs text-gray-500 uppercase tracking-widest mb-3">
+              Organized by
+            </p>
+            <a
+              href="index.html"
+              class="brand text-2xl font-bold text-purple-400 tracking-widest"
+              >LEXSTRO</a
+            >
+            <p class="text-gray-500 text-xs mt-2 leading-relaxed">
+              Your ultimate gaming destination — games, gear &amp; great deals.
+            </p>
+          </div>
+
+          <div>
+            <p class="text-xs text-gray-500 uppercase tracking-widest mb-3">
+              Our Partner
+            </p>
+            <img
+              width="100px"
+              src="https://www.cstad.edu.kh/_next/image?url=%2Fschool-logo%2Fistad-lms-logo.png&w=256&q=75"
+              alt="istad"
+            />
+          </div>
+
+          <div>
+            <p class="text-xs text-gray-500 uppercase tracking-widest mb-3">
+              Quick Links
+            </p>
+            <ul class="space-y-2 list-none">
+              <li>
+                <a
+                  href="../index.html"
+                  class="text-gray-400 hover:text-purple-400 text-sm transition-colors"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="games.html"
+                  class="text-gray-400 hover:text-purple-400 text-sm transition-colors"
+                  >Games</a
+                >
+              </li>
+              <li>
+                <a
+                  href="gear.html"
+                  class="text-gray-400 hover:text-purple-400 text-sm transition-colors"
+                  >Gear</a
+                >
+              </li>
+              <li>
+                <a
+                  href="about.html"
+                  class="text-gray-400 hover:text-purple-400 text-sm transition-colors"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact.html"
+                  class="text-gray-400 hover:text-purple-400 text-sm transition-colors"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p class="text-xs text-gray-500 uppercase tracking-widest mb-3">
+              Contact Us
+            </p>
+            <ul class="space-y-2 list-none">
+              <li class="flex items-center gap-2 text-gray-400 text-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+             <a href="mailto:lexstro@gmail.com"> lexstro@gmail.com</a>
+            </li>
+            <li class="flex items-center gap-2 text-gray-400 text-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.1a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:0714097399">+855 714 097 399</a>
+            </li>
+              <li class="flex items-center gap-2 text-gray-400 text-sm">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                Phnom Penh, Cambodia
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-800 pt-5 flex flex-col md:flex-row justify-between items-center gap-2"
+        >
+          <p class="text-gray-600 text-xs">
+            © 2026 LEXSTRO Gaming Store. All rights reserved.
+          </p>
+          <div class="flex gap-4">
+            <a
+              href="#"
+              class="text-gray-600 hover:text-purple-400 text-xs transition-colors"
+              >Privacy Policy</a
+            >
+            <a
+              href="#"
+              class="text-gray-600 hover:text-purple-400 text-xs transition-colors"
+              >Terms of Service</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <script src="script.js"></script>
+  </body>
+</html>

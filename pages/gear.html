@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LEXSTRO</title>
+  <link rel="stylesheet" href="../src/output.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../style.css"/>
+  <style>
+.card-wrap { position: relative; }
+     .eye-btn {
+      position: absolute; top: 8px; right: 8px;
+      background: rgba(46, 1, 72, 0.873); color: gainsboro;
+      border: none; border: 1px solid rgb(0, 0, 0); border-radius: 10%; width: 54px; height: 32px;
+      font-size: 15px; cursor: pointer; display: flex;
+      align-items: center; justify-content: center;
+      backdrop-filter: blur(4px); transition: background 0.2s; z-index: 2;
+    }
+    .eye-btn:hover { background: #790888; border: 1px solid rgba(8, 7, 8, 0.675); }
+  </style>
+</head>
+
+<body class="min-h-screen bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100 transition-colors duration-300">
+
+  <nav class="bg-white dark:bg-gray-950 border-b border-gray-200 dark:border-gray-800 sticky top-0 z-50">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="../index.html" class="brand text-xl text-purple-600 dark:text-purple-400 font-bold tracking-widest">LEXSTRO</a>
+      <ul class="hidden md:flex gap-6 text-sm font-semibold list-none">
+        <li><a href="../index.html"   class="nav-link">Home</a></li>
+        <li><a href="games.html"   class="nav-link">Games</a></li>
+        <li><a href="gear.html"    class="nav-link active-link">Gear</a></li>
+        <li><a href="about.html"   class="nav-link">About Us</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="login.html" class="nav-link">Login/Register</a></li>
+      </ul>
+      <div class="flex items-center gap-2">
+        <button onclick="toggleTheme()" aria-label="Toggle theme" class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-purple-100 dark:hover:bg-purple-900 transition-colors">
+          <span id="theme-icon">🌙</span>
+        </button>
+        <button onclick="openCart()" class="cart-count bg-purple-600 hover:bg-purple-500 text-white text-xs px-3 py-1.5 rounded font-semibold transition-colors">
+          🛒 Cart (0)
+        </button>
+        <button onclick="toggleMenu()" aria-label="Toggle menu" class="md:hidden w-8 h-8 rounded bg-gray-100 dark:bg-gray-800 text-lg">
+          <span id="ham">☰</span>
+        </button>
+      </div>
+    </div>
+    <ul id="mob-menu" class="mob-menu md:hidden px-4 pb-3 pt-2 border-t border-gray-100 dark:border-gray-800 flex-col gap-3 text-sm font-semibold list-none">
+      <li><a href="../index.html"   class="block text-gray-600 dark:text-gray-300 hover:text-purple-500"> Home</a></li>
+      <li><a href="games.html"   class="block text-gray-600 dark:text-gray-300 hover:text-purple-500"> Games</a></li>
+      <li><a href="gear.html"    class="block text-gray-600 dark:text-gray-300 hover:text-purple-500"> Gear</a></li>
+      <li><a href="about.html"   class="block text-gray-600 dark:text-gray-300 hover:text-purple-500"> About Us</a></li>
+      <li><a href="contact.html" class="block text-gray-600 dark:text-gray-300 hover:text-purple-500"> Contact</a></li>
+       <li><a href="login.html" class="block text-gray-600 dark:text-gray-300 hover:text-purple-500"> Login/Register</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="max-w-5xl mx-auto px-4 py-10 fade-up delay-2">
+      <h1 class="brand text-xl font-bold text-purple-600 dark:text-purple-400 mb-1">Gaming Gear</h1>
+      <p class="text-gray-400 text-sm mb-6">Top-quality peripherals for serious gamers.</p>
+
+      <ul class="grid grid-cols-2 md:grid-cols-3 gap-5 list-none">
+        <li><article class="card">
+          <div class="card-wrap">
+            <img src="https://i.pinimg.com/1200x/11/42/4f/11424fd7e70c8321f908ef4e1f1e8034.jpg" alt="ProClick X500" class="card-img"/>
+            <button class="eye-btn" onclick="openPreview('ProClick X500', 99.99, 'Gaming Mouse', 'Logitech neW G502 X gaming mice have clicky optical buttons.', true)">Preview</button>
+          </div>
+          <div class="p-3 fade-up delay-2">
+            <h2 class="font-semibold text-sm">ProClick X500</h2>
+            <p class="text-gray-400 text-xs mb-2">Gaming Mouse</p>
+            <div class="flex justify-between items-center">
+              <p class="text-purple-600 dark:text-purple-400 font-bold text-sm">$99.99</p>
+              <button class="btn-add" onclick="addToCart('ProClick X500', 99.99)">Add</button>
+            </div>
+          </div>
+        </article></li>
+
+        <li><article class="card">
+          <div class="card-wrap">
+            <img src="https://i.pinimg.com/736x/63/06/af/6306af7d8089e5393009d8b164690d43.jpg" alt="G520X" class="card-img"/>
+            <button class="eye-btn" onclick="openPreview('G520X', 100.99, 'Gaming Mouse', 'Logitech Gs reinvented iconic G502 X gaming mouse and make new epic records in the gaming scene!', true)">Preview</button>
+          </div>
+          <div class="p-3 fade-up delay-2">
+            <h2 class="font-semibold text-sm">G520X</h2>
+            <p class="text-gray-400 text-xs mb-2">Gaming Mouse</p>
+            <div class="flex justify-between items-center">
+              <p class="text-purple-600 dark:text-purple-400 font-bold text-sm">$100.99</p>
+              <button class="btn-add" onclick="addToCart('G520X', 100.99)">Add</button>
+            </div>
+          </div>
+        </article></li>
+
+           <li><article class="card">
+          <div class="card-wrap">
+            <img src="https://i.pinimg.com/1200x/79/af/da/79afda423c1bbe6bb06055b474a479e2.jpg" alt="ProClick X730" class="card-img"/>
+            <button class="eye-btn" onclick="openPreview('ProClick X500', 500, 'Gaming Mouse', 'Features Details Specifications CACKBIRD Wireless Gaming Mmouse, 9 RFB Backlit Modes,10,000 DPI.', true)">Preview</button>
+          </div>
+          <div class="p-3 fade-up delay-2">
+            <h2 class="font-semibold text-sm">ProClick X730</h2>
+            <p class="text-gray-400 text-xs mb-2">Gaming Mouse</p>
+            <div class="flex justify-between items-center">
+              <p class="text-purple-600 dark:text-purple-400 font-bold text-sm">$500</p>
+              <button class="btn-add" onclick="addToCart('ProClick X730', 500)">Add</button>
+            </div>
+          </div>
+        </article></li>
+
+        <li><article class="card">
+          <div class="card-wrap">
+            <img src="https://i.pinimg.com/1200x/29/13/7c/29137ca40bdfe93b23722638a58dfd1b.jpg" alt="KT68 Pro" class="card-img"/>
+            <button class="eye-btn" onclick="openPreview('NexKey RGB', 89.99, 'Mech Keyboard', 'KT68 Pro - UItra-puiet Mechanical Keyboard For Typing & Game', true)">Preview</button>
+          </div>
+          <div class="p-3 fade-up delay-2">
+            <h2 class="font-semibold text-sm">KT68 Pro</h2>
+            <p class="text-gray-400 text-xs mb-2">Mech Keyboard</p>
+            <div class="flex justify-between items-center">
+              <p class="text-purple-600 dark:text-purple-400 font-bold text-sm">$89.99</p>
+              <button class="btn-add" onclick="addToCart('KT68 Pro', 89.99)">Add</button>
+            </div>
+          </div>
+        </article></li>
+
+        <li><article class="card">
+          <div class="card-wrap">
+            <img src="https://i.pinimg.com/1200x/03/34/22/0334229f1ffdc7df2ad209fb1c3f38bb.jpg" alt="GravaStar" class="card-img"/>
+            <button class="eye-btn" onclick="openPreview('NexKey RGB', 89.99, 'Mech Keyboard', 'GravaStar Mercury K1 Series: 75% Mechanical Keyboards For Gaming.', true)">Preview</button>
+          </div>
+          <div class="p-3 fade-up delay-2">
+            <h2 class="font-semibold text-sm">GravaStar</h2>
+            <p class="text-gray-400 text-xs mb-2">Mech Keyboard</p>
+            <div class="flex justify-between items-center">
+              <p class="text-purple-600 dark:text-purple-400 font-bold text-sm">$80.99</p>
+              <button class="btn-add" onclick="addToCart('GravaStar', 80.99)">Add</button>
+            </div>
+          </div>
+        </article></li>
+
+          <li><article class="card">
+          <div class="card-wrap">
+            <img src="https://i.pinimg.com/1200x/aa/38/cc/aa38cc139685c63f043308c23ab977bd.jpg" alt="Ambidextrous" class="card-img"/>
+            <button class="eye-btn" onclick="openPreview('NexKey RGB', 200.00, 'Mech Keyboard', 'Ambidextrous is the best for Your Gaming Aim.', true)">Preview</button>
+          </div>
+          <div class="p-3 fade-up delay-2">
+            <h2 class="font-semibold text-sm">Ambidextrous</h2>
+            <p class="text-gray-400 text-xs mb-2">Mech Keyboard</p>
+            <div class="flex justify-between items-center">
+              <p class="text-purple-600 dark:text-purple-400 font-bold text-sm">$200.00</p>
+              <button class="btn-add" onclick="addToCart('Ambidextrous', 200.00)">Add</button>
+            </div>
+          </div>
+        </article></li>
+
+        <li><article class="card">
+          <div class="card-wrap">
+            <img src="https://i.pinimg.com/1200x/6b/32/98/6b32986399a6255fdc064eb0218d8684.jpg" alt="SoundBlast 7.1" class="card-img"/>
+            <button class="eye-btn" onclick="openPreview('SoundBlast 7.1', 350.00, 'Gaming Headset', 'Project 3 Razer Ad Ref 1', true)">Preview</button>
+          </div>
+          <div class="p-3 fade-up delay-2">
+            <h2 class="font-semibold text-sm">SoundBlast 7.1</h2>
+            <p class="text-gray-400 text-xs mb-2">Gaming Headset</p>
+            <div class="flex justify-between items-center">
+              <p class="text-purple-600 dark:text-purple-400 font-bold text-sm">$350.00</p>
+              <button class="btn-add" onclick="addToCart('SoundBlast 7.1', 350.00)">Add</button>
+            </div>
+          </div>
+        </article></li>
+
+         <li><article class="card">
+          <div class="card-wrap">
+            <img src="https://i.pinimg.com/736x/2d/53/7e/2d537e68afad84d22616f7f3520ade44.jpg"  alt="NUBWO GO6" class="card-img"/>
+            <button class="eye-btn" onclick="openPreview('NUBWO GO6', 600.00, 'Gaming Headset', 'NUBWO GO6 Dual Wireless Gaming Headset.', true)">Preview</button>
+          </div>
+          <div class="p-3 fade-up delay-2">
+            <h2 class="font-semibold text-sm">SNUBWO GO6</h2>
+            <p class="text-gray-400 text-xs mb-2">Gaming Headset</p>
+            <div class="flex justify-between items-center">
+              <p class="text-purple-600 dark:text-purple-400 font-bold text-sm">$600.00</p>
+              <button class="btn-add" onclick="addToCart('NUBWO GO6', 600.00)">Add</button>
+            </div>
+          </div>
+        </article></li>
+
+          <li><article class="card">
+          <div class="card-wrap">
+            <img src="https://i.pinimg.com/1200x/ad/f5/c4/adf5c4d2f0b653df5b3ede65a47eced9.jpg" alt="Razer BlackShark V2" class="card-img"/>
+            <button class="eye-btn" onclick="openPreview('Razer BlackShark V2', 200.00, 'Gaming Headset', 'Razer BlackShark V2 Gaming Headset', true)">Preview</button>
+          </div>
+          <div class="p-3 fade-up delay-2">
+            <h2 class="font-semibold text-sm">Razer BlackShark V2</h2>
+            <p class="text-gray-400 text-xs mb-2">Gaming Headset</p>
+            <div class="flex justify-between items-center">
+              <p class="text-purple-600 dark:text-purple-400 font-bold text-sm">$200.00</p>
+              <button class="btn-add" onclick="addToCart('Razer BlackShark V2', 200.00)">Add</button>
+            </div>
+          </div>
+        </article></li>
+
+        <li><article class="card">
+          <div class="card-wrap">
+            <img src="https://i.pinimg.com/1200x/db/ee/2d/dbee2d47161bba8a84d6f53868f745cb.jpg" alt="Miniffire" class="card-img"/>
+            <button class="eye-btn" onclick="openPreview('Miniffire', 500.00, 'Gaming Monitor', 'Actualite: Bon plan-Amazon propose cet ecran gaming Full HD Miniffire de 24 pouces, 180 Hz, Adapta', true)">Preview</button>
+          </div>
+          <div class="p-3 fade-up delay-2">
+            <h2 class="font-semibold text-sm">Miniffire X27</h2>
+            <p class="text-gray-400 text-xs mb-2">Gaming Monitor</p>
+            <div class="flex justify-between items-center">
+              <p class="text-purple-600 dark:text-purple-400 font-bold text-sm">$500.00</p>
+              <button class="btn-add" onclick="addToCart('Miniffire', 500.00)">Add</button>
+            </div>
+          </div>
+        </article></li>
+
+        <li><article class="card">
+          <div class="card-wrap">
+            <img src="https://i.pinimg.com/1200x/07/9b/c4/079bc4304da859b66e8e1f2951a384a3.jpg" alt="LightScreen 24" class="card-img"/>
+            <button class="eye-btn" onclick="openPreview('ViewMax 27 inch', 1000, 'Gaming Monitor', '24.5 inch Gaming PC Monitor 200Hz, FHD 1080p VA screen,Built-in speakers,1ms witout Bezel,...', true)">Preview</button>
+          </div>
+          <div class="p-3 fade-up delay-2">
+            <h2 class="font-semibold text-sm">LightScreen 24</h2>
+            <p class="text-gray-400 text-xs mb-2">Gaming Monitor</p>
+            <div class="flex justify-between items-center">
+              <p class="text-purple-600 dark:text-purple-400 font-bold text-sm">$1000</p>
+              <button class="btn-add" onclick="addToCart('LightScreen 24', 1000)">Add</button>
+            </div>
+          </div>
+        </article></li>
+
+          <li><article class="card">
+          <div class="card-wrap">
+            <img src="https://i.pinimg.com/1200x/57/2f/78/572f78b62ae52ae908abf10c8d317a9f.jpg" alt="ShowYu 27X" class="card-img"/>
+            <button class="eye-btn" onclick="openPreview('ViewMax 27 inch', 800, 'Gaming Monitor', '27 Inch Office Monitor, 100Hz FHD 1080P Computer Screen with HDMI VGA,Eye Care,Frameless 3-...', true)">Preview</button>
+          </div>
+          <div class="p-3 fade-up delay-2">
+            <h2 class="font-semibold text-sm">ShowYu 27X</h2>
+            <p class="text-gray-400 text-xs mb-2">Gaming Monitor</p>
+            <div class="flex justify-between items-center">
+              <p class="text-purple-600 dark:text-purple-400 font-bold text-sm">$800</p>
+              <button class="btn-add" onclick="addToCart('ShowYu 27X', 800)">Add</button>
+            </div>
+          </div>
+        </article></li>
+
+        
+
+        <li><article class="card">
+          <div class="card-wrap">
+            <img src="https://i.pinimg.com/736x/03/e3/47/03e3478119c8d6a3483b2b39687b5914.jpg" alt="Redmagic 11 pro" class="card-img"/>
+            <button class="eye-btn" onclick="openPreview('Redmagic 11 pro', 899, 'World First Lipuid-Cooled Gaming Phone: Red Magic 11 Pro.', true)">Preview</button>
+          </div>
+          <div class="p-3 fade-up delay-2">
+            <h2 class="font-semibold text-sm">Redmagic 11 Pro</h2>
+            <p class="text-gray-400 text-xs mb-2">Gaming Phone</p>
+            <div class="flex justify-between items-center">
+              <p class="text-purple-600 dark:text-purple-400 font-bold text-sm">$899</p>
+              <button class="btn-add" onclick="addToCart('Redmagic 11 pro', 899)">Add</button>
+            </div>
+          </div>
+        </article></li>
+
+           <li><article class="card">
+          <div class="card-wrap">
+            <img src="https://i.pinimg.com/1200x/a9/69/3d/a9693d8288a4af665288a8596cc973f1.jpg" alt="ROG Ally" class="card-img"/>
+            <button class="eye-btn" onclick="openPreview('NexPad Pro', 780, 'The ASUS ROG Ally X shows why you should always wait for the second generration of a new product ASUS ROG Ally X shows why you should wait for the second generation,', true)">Preview</button>
+          </div>
+          <div class="p-3 fade-up delay-2">
+            <h2 class="font-semibold text-sm">ROG Ally</h2>
+            <p class="text-gray-400 text-xs mb-2">Gaming Device</p>
+            <div class="flex justify-between items-center">
+              <p class="text-purple-600 dark:text-purple-400 font-bold text-sm">$780</p>
+              <button class="btn-add" onclick="addToCart('ROG Ally', 780)">Add</button>
+            </div>
+          </div>
+        </article></li>
+
+        <li><article class="card">
+          <div class="card-wrap">
+            <img src="https://i.pinimg.com/1200x/b1/f9/db/b1f9dbfb85d9dc333dc50bf043a709d7.jpg" alt="Redmagic 7 Pro" class="card-img"/>
+            <button class="eye-btn" onclick="openPreview('Redmagic 7 Pro', 320, 'REDMAGIC 7 Pro Win More Games.', true)">Preview</button>
+          </div>
+          <div class="p-3 fade-up delay-2">
+            <h2 class="font-semibold text-sm">Redmagic 7 Pro</h2>
+            <p class="text-gray-400 text-xs mb-2">Gaming Phone</p>
+            <div class="flex justify-between items-center">
+              <p class="text-purple-600 dark:text-purple-400 font-bold text-sm">$320</p>
+              <button class="btn-add" onclick="addToCart('Redmagic 7 Pro', 320)">Add</button>
+            </div>
+          </div>
+        </article></li>
+
+        <li><article class="card">
+          <div class="card-wrap">
+            <img src="https://i.pinimg.com/736x/a1/61/df/a161dfe4cd96f12fe61a417f2a600299.jpg" alt="Lexstro Build" class="card-img"/>
+            <button class="eye-btn" onclick="openPreview('Lexstro Build', 6000, 'INTEL CORE i9 14900k MSI Z790 GOD LIKEGS KILLS TRIDENT 16XGB 6000MHZ SAMSUNG 990 PRO 2TB', true)">Preview</button>
+          </div>
+          <div class="p-3 fade-up delay-2">
+            <h2 class="font-semibold text-sm">Lexstro Build</h2>
+            <p class="text-gray-400 text-xs mb-2">One Set PC</p>
+            <div class="flex justify-between items-center">
+              <p class="text-purple-600 dark:text-purple-400 font-bold text-sm">$3000</p>
+              <button class="btn-add" onclick="addToCart('Lexstro Build', 3000)">Add</button>
+            </div>
+          </div>
+        </article></li>
+
+        <li><article class="card">
+          <div class="card-wrap">
+            <img src="https://i.pinimg.com/736x/bd/41/79/bd4179b267ed32230cc9e423e1bb2644.jpg" alt="Camada" class="card-img"/>
+            <button class="eye-btn" onclick="openPreview('Camada', 5000, ' Gaming Computers Camada  INTEL CORE i9 14900k MSI Z790 GOD LIKEGS KILLS TRIDENT 16XGB 6000MHZ SAMSUNG 990 PRO 2TB')">Preview</button>
+          </div>
+          <div class="p-3 fade-up delay-2">
+            <h2 class="font-semibold text-sm">Camada</h2>
+            <p class="text-gray-400 text-xs mb-2">One Set PC</p>
+            <div class="flex justify-between items-center">
+              <p class="text-purple-600 dark:text-purple-400 font-bold text-sm">$5000</p>
+              <button class="btn-add" onclick="addToCart('NexPad Pro', 5000)">Add</button>
+            </div>
+          </div>
+        </article></li>
+
+        <li><article class="card">
+          <div class="card-wrap">
+            <img src="https://i.pinimg.com/736x/dd/76/ea/dd76eac09704e069585f3b2f151aa12b.jpg" alt="RGB LED Strip" class="card-img"/>
+            <button class="eye-btn" onclick="openPreview('RGB LED Strip', 10.00, 'Desk Lighting', 'Smart RGB LED strip with 16 million colors, app control, and music sync mode. Transform your gaming setup atmosphere with vibrant, customizable lighting effects.')">Preview</button>
+          </div>
+          <div class="p-3 fade-up delay-2">
+            <h2 class="font-semibold text-sm">RGB LED Strip</h2>
+            <p class="text-gray-400 text-xs mb-2">Desk Lighting</p>
+            <div class="flex justify-between items-center">
+              <p class="text-purple-600 dark:text-purple-400 font-bold text-sm">$10.00</p>
+              <button class="btn-add" onclick="addToCart('RGB LED Strip', 10.00)">Add</button>
+            </div>
+          </div>
+        </article></li>
+      </ul>
+    </section>
+  </main>
+
+ <footer class="bg-gray-100 dark:bg-gray-950 border-t border-gray-300 dark:border-gray-800 pt-12 pb-6">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
+
+      
+        <div>
+          <p class="text-xs text-gray-500 uppercase tracking-widest mb-3">Organized by</p>
+          <a href="index.html" class="brand text-2xl font-bold text-purple-400 tracking-widest">LEXSTRO</a>
+          <p class="text-gray-500 text-xs mt-2 leading-relaxed">Your ultimate gaming destination — games, gear &amp; great deals.</p>
+        </div>
+
+        <div>
+          <p class="text-xs text-gray-500 uppercase tracking-widest mb-3">Our Partner</p>
+          <img width="100px" src="https://www.cstad.edu.kh/_next/image?url=%2Fschool-logo%2Fistad-lms-logo.png&w=256&q=75" alt="istad">
+        </div>
+
+        <div>
+          <p class="text-xs text-gray-500 uppercase tracking-widest mb-3">Quick Links</p>
+          <ul class="space-y-2 list-none">
+            <li><a href="../index.html"   class="text-gray-400 hover:text-purple-400 text-sm transition-colors">Home</a></li>
+            <li><a href="games.html"   class="text-gray-400 hover:text-purple-400 text-sm transition-colors">Games</a></li>
+            <li><a href="gear.html"    class="text-gray-400 hover:text-purple-400 text-sm transition-colors">Gear</a></li>
+            <li><a href="about.html"   class="text-gray-400 hover:text-purple-400 text-sm transition-colors">About Us</a></li>
+            <li><a href="contact.html" class="text-gray-400 hover:text-purple-400 text-sm transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        
+        <div>
+          <p class="text-xs text-gray-500 uppercase tracking-widest mb-3">Contact Us</p>
+          <ul class="space-y-2 list-none">
+             <li class="flex items-center gap-2 text-gray-400 text-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+             <a href="mailto:lexstro@gmail.com"> lexstro@gmail.com</a>
+            </li>
+            <li class="flex items-center gap-2 text-gray-400 text-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.1a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:0714097399">+855 714 097 399</a>
+            </li>
+            <li class="flex items-center gap-2 text-gray-400 text-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Phnom Penh, Cambodia
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="border-t border-gray-800 pt-5 flex flex-col md:flex-row justify-between items-center gap-2">
+        <p class="text-gray-600 text-xs">© 2026 LEXSTRO Gaming Store. All rights reserved.</p>
+        <div class="flex gap-4">
+          <a href="#" class="text-gray-600 hover:text-purple-400 text-xs transition-colors">Privacy Policy</a>
+          <a href="#" class="text-gray-600 hover:text-purple-400 text-xs transition-colors">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

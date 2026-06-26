@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LEXSTRO</title>
+  <link rel="stylesheet" href="../src/output.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../style.css"/>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+
+<body class="min-h-screen bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100 transition-colors duration-300">
+
+  <nav class="bg-white dark:bg-gray-950 border-b border-gray-200 dark:border-gray-800 sticky top-0 z-50">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="../index.html" class="brand text-xl text-purple-600 dark:text-purple-400 font-bold tracking-widest">LEXSTRO</a>
+      <ul class="hidden md:flex gap-6 text-sm font-semibold list-none">
+        <li><a href="../index.html"   class="nav-link">Home</a></li>
+        <li><a href="games.html"   class="nav-link">Games</a></li>
+        <li><a href="gear.html"    class="nav-link">Gear</a></li>
+        <li><a href="about.html"   class="nav-link active-link">About Us</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="login.html" class="nav-link">Login/Register</a></li>
+      </ul>
+      <div class="flex items-center gap-2">
+        <button onclick="toggleTheme()" aria-label="Toggle theme" class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-purple-100 dark:hover:bg-purple-900 transition-colors">
+          <span id="theme-icon">🌙</span>
+        </button>
+        <button class="bg-purple-600 hover:bg-purple-500 text-white text-xs px-3 py-1.5 rounded font-semibold transition-colors">
+          🛒 Cart (0)
+        </button>
+         <button onclick="toggleMenu()" aria-label="Toggle menu" class="md:hidden w-8 h-8 rounded bg-gray-100 dark:bg-gray-800 text-lg">
+          <span id="ham">☰</span>
+        </button>
+      </div>
+    </div>
+    <ul id="mob-menu" class="mob-menu md:hidden px-4 pb-3 pt-2 border-t border-gray-100 dark:border-gray-800 flex-col gap-3 text-sm font-semibold list-none">
+      <li><a href="../index.html"   class="block text-gray-600 dark:text-gray-300 hover:text-purple-500"> Home</a></li>
+      <li><a href="games.html"   class="block text-gray-600 dark:text-gray-300 hover:text-purple-500"> Games</a></li>
+      <li><a href="gear.html"    class="block text-gray-600 dark:text-gray-300 hover:text-purple-500"> Gear</a></li>
+      <li><a href="about.html"   class="block text-gray-600 dark:text-gray-300 hover:text-purple-500"> About Us</a></li>
+      <li><a href="contact.html" class="block text-gray-600 dark:text-gray-300 hover:text-purple-500"> Contact</a></li>
+       <li><a href="login.html" class="block text-gray-600 dark:text-gray-300 hover:text-purple-500"> Login/Register</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <header class="bg-gradient-to-br from-purple-50 to-gray-100 dark:from-gray-900 dark:to-gray-950 py-14 text-center px-4">
+      <h1 class="brand text-4xl font-bold text-purple-600 dark:text-purple-400 mb-3 fade-up delay-2">About LEXSTRO</h1>
+      <p class="text-gray-500 dark:text-gray-400 text-sm max-w-lg mx-auto fade-up delay-2">We're a team of gamers who built the store we always wished existed — affordable, fast, and packed with everything you need.</p>
+    </header>
+
+    <section class="max-w-3xl mx-auto px-4 py-10">
+
+      <article class="bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-6 mb-6 fade-up delay-2">
+        <h2 class="brand text-lg font-bold text-purple-600 dark:text-purple-400 mb-3 fade-up delay-2 flex items-center gap-2"><i data-lucide="book-open" class="w-5 h-5"></i> Our Story</h2>
+        <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+          Lexstro was founded in 2020 by a small group of gaming enthusiasts who were frustrated with overpriced games and slow delivery. We started with just 50 titles and a dream — today we carry over 500+ games and a full lineup of gaming gear. Our mission is simple: give every gamer access to the best products at fair prices, delivered instantly.
+        </p>
+      </article>
+
+      <ul class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 text-center list-none fade-up delay-2">
+        <li class="bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-4 fade-up delay-2">
+          <p class="text-2xl font-bold text-purple-600 dark:text-purple-400 fade-up delay-2">500+</p>
+          <p class="text-gray-400 text-xs mt-1 fade-up delay-2">Games Available</p>
+        </li>
+        <li class="bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-4 fade-up delay-2">
+          <p class="text-2xl font-bold text-purple-600 dark:text-purple-400 fade-up delay-2">50K+</p>
+          <p class="text-gray-400 text-xs mt-1 fade-up delay-2">Happy Customers</p>
+        </li>
+        <li class="bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-4 fade-up delay-2">
+          <p class="text-2xl font-bold text-purple-600 dark:text-purple-400 fade-up delay-2">4.9★</p>
+          <p class="text-gray-400 text-xs mt-1 fade-up delay-2">Average Rating</p>
+        </li>
+        <li class="bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-4 fade-up delay-2">
+          <p class="text-2xl font-bold text-purple-600 dark:text-purple-400 fade-up delay-2">24/7</p>
+          <p class="text-gray-400 text-xs mt-1 fade-up delay-2">Support Hours</p>
+        </li>
+      </ul>
+
+      <h2 class="brand text-lg font-bold text-purple-600 dark:text-purple-400 mb-4 fade-up delay-2 flex items-center gap-2"><i data-lucide="heart" class="w-5 h-5"></i> Our Values</h2>
+      <ul class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8 list-none fade-up delay-2">
+        <li class="bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-4 text-center fade-up delay-2">
+          <div class="flex justify-center mb-2"><i data-lucide="tag" class="w-8 h-8 text-purple-500"></i></div>
+          <p class="font-semibold text-sm mb-1 fade-up delay-2">Fair Pricing</p>
+          <p class="text-gray-400 text-xs fade-up delay-2">No hidden fees. What you see is what you pay.</p>
+        </li>
+        <li class="bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-4 text-center fade-up delay-2">
+          <div class="flex justify-center mb-2"><i data-lucide="zap" class="w-8 h-8 text-purple-500"></i></div>
+          <p class="font-semibold text-sm mb-1 fade-up delay-2">Fast Delivery</p>
+          <p class="text-gray-400 text-xs fade-up delay-2">Digital keys sent to your inbox instantly.</p>
+        </li>
+        <li class="bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-4 text-center fade-up delay-2">
+          <div class="flex justify-center mb-2"><i data-lucide="handshake" class="w-8 h-8 text-purple-500"></i></div>
+          <p class="font-semibold text-sm mb-1 fade-up delay-2">Community First</p>
+          <p class="text-gray-400 text-xs fade-up delay-2">Built by gamers, for gamers.</p>
+        </li>
+      </ul>
+
+      <h2 class="brand text-lg font-bold text-purple-600 dark:text-purple-400 mb-4 fade-up delay-2 flex items-center gap-2"><i data-lucide="users" class="w-5 h-5"></i> Meet the Team</h2>
+      <ul class="grid grid-cols-2 md:grid-cols-4 gap-4 list-none fade-up delay-2">
+        <li><article class="bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden text-center fade-up delay-2">
+          <img src="../images/bro9.png" alt="POV KIMSUONG" class="w-full h-28 object-cover bg-gray-200 dark:bg-gray-800 fade-up delay-2"/>
+          <div class="p-3 fade-up delay-2">
+            <h3 class="font-semibold text-sm fade-up delay-2">POV KIMSUONG</h3>
+            <p class="text-purple-500 text-xs fade-up delay-2">MEMBER</p>
+          </div>
+        </article></li>
+        <li><article class="bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden text-center fade-up delay-2">
+          <img src="../images/bro5.png" alt="NOURV SITHIKUN" class="w-full h-28 object-cover bg-gray-200 dark:bg-gray-800 fade-up delay-2"/>
+          <div class="p-3 fade-up delay-2">
+            <h3 class="font-semibold text-sm fade-up delay-2">NOURV SITHIKUN</h3>
+            <p class="text-purple-500 text-xs fade-up delay-2">LEADER</p>
+          </div>
+        </article></li>
+        <li><article class="bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden text-center fade-up delay-2">
+          <img src="../images/bro3.png" alt="NEN MAKARA" class="w-full h-28 object-cover bg-gray-200 dark:bg-gray-800 fade-up delay-2"/>
+          <div class="p-3 fade-up delay-2 ">
+            <h3 class="font-semibold text-sm fade-up delay-2">NEN MAKARA</h3>
+            <p class="text-purple-500 text-xs fade-up delay-2">SUB LEADER</p>
+          </div>
+        </article></li>
+        <li><article class="bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden text-center fade-up delay-2">
+          <img src="../images/bro4.png" alt="LUN KOEMTRY" class="w-full h-28 object-cover bg-gray-200 dark:bg-gray-800 fade-up delay-2"/>
+          <div class="p-3 fade-up delay-2">
+            <h3 class="font-semibold text-sm fade-up delay-2">LUN KOEMTRY</h3>
+            <p class="text-purple-500 text-xs fade-up delay-2">MEMBER</p>
+          </div>
+        </article></li>
+
+             <li><article class="bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden text-center fade-up delay-2">
+          <img src="../images/bro10.jpg" alt="BOREY SOTHEARITH" class="w-full h-28 object-cover bg-gray-200 dark:bg-gray-800 fade-up delay-2"/>
+          <div class="p-3 fade-up delay-2">
+            <h3 class="font-semibold text-sm fade-up delay-2">BOREY SOTHEARITH </h3>
+            <p class="text-purple-500 text-xs fade-up delay-2">MEMBER</p>
+          </div>
+        </article></li>
+      </ul>
+
+    </section>
+  </main>
+
+
+  <footer class="bg-gray-100 dark:bg-gray-950 border-t border-gray-300 dark:border-gray-800 pt-12 pb-6">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
+
+        <div>
+          <p class="text-xs text-gray-500 uppercase tracking-widest mb-3">Organized by</p>
+          <a href="index.html" class="brand text-2xl font-bold text-purple-400 tracking-widest">LEXSTRO</a>
+          <p class="text-gray-500 text-xs mt-2 leading-relaxed">Your ultimate gaming destination — games, gear &amp; great deals.</p>
+        </div>
+
+        <div>
+          <p class="text-xs text-gray-500 uppercase tracking-widest mb-3">Our Partner</p>
+          <img width="100px" src="https://www.cstad.edu.kh/_next/image?url=%2Fschool-logo%2Fistad-lms-logo.png&w=256&q=75" alt="istad">
+        </div>
+
+        <div>
+          <p class="text-xs text-gray-500 uppercase tracking-widest mb-3">Quick Links</p>
+          <ul class="space-y-2 list-none">
+            <li><a href="../index.html"   class="text-gray-400 hover:text-purple-400 text-sm transition-colors">Home</a></li>
+            <li><a href="games.html"   class="text-gray-400 hover:text-purple-400 text-sm transition-colors">Games</a></li>
+            <li><a href="gear.html"    class="text-gray-400 hover:text-purple-400 text-sm transition-colors">Gear</a></li>
+            <li><a href="about.html"   class="text-gray-400 hover:text-purple-400 text-sm transition-colors">About Us</a></li>
+            <li><a href="contact.html" class="text-gray-400 hover:text-purple-400 text-sm transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="text-xs text-gray-500 uppercase tracking-widest mb-3">Contact Us</p>
+          <ul class="space-y-2 list-none">
+            <li class="flex items-center gap-2 text-gray-400 text-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+             <a href="mailto:lexstro@gmail.com"> lexstro@gmail.com</a>
+            </li>
+            <li class="flex items-center gap-2 text-gray-400 text-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.1a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:0714097399">+855 714 097 399</a>
+            </li>
+            <li class="flex items-center gap-2 text-gray-400 text-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Phnom Penh, Cambodia
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="border-t border-gray-800 pt-5 flex flex-col md:flex-row justify-between items-center gap-2">
+        <p class="text-gray-600 text-xs">© 2026 LEXSTRO Gaming Store. All rights reserved.</p>
+        <div class="flex gap-4">
+          <a href="#" class="text-gray-600 hover:text-purple-400 text-xs transition-colors">Privacy Policy</a>
+          <a href="#" class="text-gray-600 hover:text-purple-400 text-xs transition-colors">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

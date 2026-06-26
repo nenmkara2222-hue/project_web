@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LEXSTRO</title>
+  <link rel="stylesheet" href="../src/output.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../style.css"/>
+  <style>
+    .card-wrap { position: relative; }
+     .eye-btn {
+      position: absolute; top: 8px; right: 8px;
+      background: rgba(46, 1, 72, 0.873); color: gainsboro;
+      border: none; border: 1px solid rgb(0, 0, 0); border-radius: 10%; width: 54px; height: 32px;
+      font-size: 15px; cursor: pointer; display: flex;
+      align-items: center; justify-content: center;
+      backdrop-filter: blur(4px); transition: background 0.2s; z-index: 2;
+    }
+    .eye-btn:hover { background: #790888; border: 1px solid rgba(8, 7, 8, 0.675); }
+  </style>
+</head>
+<body class="min-h-screen bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100 transition-colors duration-300 ">
+
+  <nav class="bg-white dark:bg-gray-950 border-b border-gray-200 dark:border-gray-800 sticky top-0 z-50">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="../index.html" class="brand text-xl text-purple-600 dark:text-purple-400 font-bold tracking-widest">LEXSTRO</a>
+      <ul class="hidden md:flex gap-6 text-sm font-semibold list-none">
+        <li><a href="../index.html"   class="nav-link">Home</a></li>
+        <li><a href="games.html"   class="nav-link active-link">Games</a></li>
+        <li><a href="gear.html"    class="nav-link">Gear</a></li>
+        <li><a href="about.html"   class="nav-link">About Us</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="login.html" class="nav-link">Login/Register</a></li>
+      </ul>
+      <div class="flex items-center gap-2">
+        <button onclick="toggleTheme()" class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-purple-100 dark:hover:bg-purple-900 transition-colors">
+          <span id="theme-icon">🌙</span>
+        </button>
+        <button onclick="openCart()" class="cart-count bg-purple-600 hover:bg-purple-500 text-white text-xs px-3 py-1.5 rounded font-semibold transition-colors">
+          🛒 Cart (0)
+        </button>
+        <button onclick="toggleMenu()" class="md:hidden w-8 h-8 rounded bg-gray-100 dark:bg-gray-800 text-lg">
+          <span id="ham">☰</span>
+        </button>
+      </div>
+    </div>
+    <ul id="mob-menu" class="mob-menu md:hidden px-4 pb-3 pt-2 border-t border-gray-100 dark:border-gray-800 flex-col gap-3 text-sm font-semibold list-none">
+      <li><a href="../index.html"   class="block text-gray-600 dark:text-gray-300 hover:text-purple-500"> Home</a></li>
+      <li><a href="games.html"   class="block text-gray-600 dark:text-gray-300 hover:text-purple-500"> Games</a></li>
+      <li><a href="gear.html"    class="block text-gray-600 dark:text-gray-300 hover:text-purple-500"> Gear</a></li>
+      <li><a href="about.html"   class="block text-gray-600 dark:text-gray-300 hover:text-purple-500">About Us</a></li>
+      <li><a href="contact.html" class="block text-gray-600 dark:text-gray-300 hover:text-purple-500"> Contact</a></li>
+       <li><a href="login.html" class="block text-gray-600 dark:text-gray-300 hover:text-purple-500"> Login/Register</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="max-w-5xl mx-auto fade-up delay-2">
+      <h1 class="brand text-xl font-bold text-purple-600 dark:text-purple-400 mb-1">Games</h1>
+      <p class="text-gray-400 text-sm mb-5">Browse our full collection.</p>
+
+      <ul class="flex gap-2 flex-wrap mb-6 list-none fade-up delay-4 ">
+        <li><button class="filter-btn bg-purple-600 text-white text-xs px-3 py-1 rounded-full" data-genre="all">All</button></li>
+        <li><button class="filter-btn text-xs px-3 py-1 rounded-full" data-genre="RPG">RPG</button></li>
+        <li><button class="filter-btn text-xs px-3 py-1 rounded-full" data-genre="FPS">FPS</button></li>
+        <li><button class="filter-btn text-xs px-3 py-1 rounded-full" data-genre="Strategy">Strategy</button></li>
+        <li><button class="filter-btn text-xs px-3 py-1 rounded-full" data-genre="Racing">Racing</button></li>
+        <li><button class="filter-btn text-xs px-3 py-1 rounded-full" data-genre="Sports">Sports</button></li>
+      </ul>
+
+      <ul class="grid grid-cols-2  md:grid-cols-3 gap-5 list-none aos-init fade-up delay-2">
+
+        <li class="game-card"  data-genre="RPG"><article class="card">
+          <div class="card-wrap ">
+            <img src="https://i.pinimg.com/736x/8f/4c/4a/8f4c4a778ea72f1c11ddef25fa9abf6b.jpg"  alt="Shadow Realm" class="card-img-tall "/>
+            <button class="eye-btn" onclick="openPreview('ETENIUM', 39.99, 'RPG • ⭐ 4.8', 'ETERNIUM is a dark fantasy RPG where you explore mysterious lands, battle powerful enemies, and unlock magical abilities. Choose your hero, upgrade skills, and shape your destiny in an epic adventure.', true)">Preview</button>
+          </div>
+          <div class="p-4 flex justify-between items-center fade-up delay-2">
+            <div>
+              <h2 class="font-semibold text-sm">ETERNIUM</h2>
+              <p class="text-gray-400 text-xs">RPG • ⭐ 4.8</p>
+            </div>
+            <div class="text-right">
+              <p class="text-purple-600 dark:text-purple-400 font-bold text-sm">$39.99</p>
+              <button class="btn-add" onclick="addToCart('Shadow Realm', 39.99)">Add</button>
+            </div>
+          </div>
+        </article></li>
+
+         <li class="game-card" data-genre="RPG">
+          <article class="card">
+          <div class="card-wrap">
+            <img src="https://i.pinimg.com/736x/ea/b6/47/eab647b28b5867eb152f28ca01a923ec.jpg" alt="Arcane Mage" class="card-img-tall"/>
+            <button class="eye-btn" onclick="openPreview('Arcane Mage', 34.99, 'RPG • ⭐ 4.4', 'Enter a magical world full of spells and ancient secrets. Master powerful magic, defeat monsters, and become the ultimate mage.', true)">Preview</button>
+          </div>
+          <div class="p-4 flex justify-between items-center fade-up delay-2">
+            <div>
+              <h2 class="font-semibold text-sm">ARK</h2>
+              <p class="text-gray-400 text-xs">RPG • ⭐ 4.4</p>
+            </div>
+            <div class="text-right">
+              <p class="text-purple-600 dark:text-purple-400 font-bold text-sm">$34.99</p>
+              <button class="btn-add" onclick="addToCart('Arcane Mage', 34.99)">Add</button>
+            </div>
+          </div>
+        </article></li>
+
+        <li class="game-card" data-genre="RPG"><article class="card">
+          <div class="card-wrap">
+            <img src="https://i.pinimg.com/736x/03/e7/60/03e760b8e80b4abd6026a38b3dcdeb2f.jpg" alt="Velocity X" class="card-img-tall"/>
+            <button class="eye-btn " onclick="openPreview('Genshin Impact', 24.99, 'Racing • ⭐ 4.7', 'Enter a vast open-world fantasy called Teyvat, where you explore beautiful lands, control unique characters, and master elemental powers. Fight enemies, solve puzzles, and uncover an epic story in a visually stunning adventure. ', true)">Preview</button>
+          </div>
+          <div class="p-4 flex justify-between items-center fade-up delay-2">
+            <div>
+              <h2 class="font-semibold text-sm fade-up delay-2">GENSHIN</h2>
+              <p class="text-gray-400 text-xs fade-up delay-2">Racing • ⭐ 4.7</p>
+            </div>
+            <div class="text-right">
+              <p class="text-purple-600 dark:text-purple-400 font-bold text-sm fade-up delay-2">$24.99</p>
+              <button class="btn-add" onclick="addToCart('Velocity X', 24.99)">Add</button>
+            </div>
+          </div>
+        </article></li>
+
+        <li class="game-card" data-genre="FPS"><article class="card">
+          <div class="card-wrap">
+            <img src="https://i.pinimg.com/1200x/be/b3/7f/beb37f44974d32eec1e5b2c6f306d164.jpg" alt="Iron Strike" class="card-img-tall"/>
+            <button class="eye-btn" onclick="openPreview('Iron Strike', 29.99, 'FPS • ⭐ 4.6', 'A high-octane tactical shooter set in near-future war zones. Choose your loadout, coordinate with your squad, and dominate fast-paced multiplayer arenas across 20+ maps.', true)">Preview</button>
+          </div>
+          <div class="p-4 flex justify-between items-center fade-up delay-2">
+            <div>
+              <h2 class="font-semibold text-sm">COD</h2>
+              <p class="text-gray-400 text-xs">FPS • ⭐ 4.6</p>
+            </div>
+            <div class="text-right">
+              <p class="text-purple-600 dark:text-purple-400 font-bold text-sm">$29.99</p>
+              <button class="btn-add" onclick="addToCart('Iron Strike', 29.99)">Add</button>
+            </div>
+          </div>
+        </article></li>
+
+           <li class="game-card" data-genre="FPS"><article class="card">
+          <div class="card-wrap">
+            <img src="https://i.pinimg.com/736x/7e/a2/ea/7ea2eaea31bb42874bab4150df92b080.jpg" alt="Goal Rush" class="card-img-tall"/>
+            <button class="eye-btn" onclick="openPreview('Goal Rush', 14.99, 'Sports • ⭐ 4.3', 'The most realistic football simulation ever made. Build your dream team, manage transfers, and compete in 30+ global leagues and tournaments. Feel every goal, every tackle, every moment.', true)">Preview</button>
+          </div>
+          <div class="p-4 flex justify-between items-center fade-up delay-2">
+            <div>
+              <h2 class="font-semibold text-sm">CA</h2>
+              <p class="text-gray-400 text-xs">Sports • ⭐ 4.3</p>
+            </div>
+            <div class="text-right">
+              <p class="text-purple-600 dark:text-purple-400 font-bold text-sm">$14.99</p>
+              <button class="btn-add" onclick="addToCart('Goal Rush', 14.99)">Add</button>
+            </div>
+          </div>
+        </article></li>
+
+        <li class="game-card" data-genre="FPS"><article class="card">
+          <div class="card-wrap">
+            <img src="https://i.pinimg.com/1200x/2b/d3/24/2bd3243a4bea2d03117b4477003e18a3.jpg" alt="Goal Rush" class="card-img-tall"/>
+            <button class="eye-btn" onclick="openPreview('Goal Rush', 14.99, 'Sports • ⭐ 4.3', 'The most realistic football simulation ever made. Build your dream team, manage transfers, and compete in 30+ global leagues and tournaments. Feel every goal, every tackle, every moment.', true)">Preview</button>
+          </div>
+          <div class="p-4 flex justify-between items-center fade-up delay-2">
+            <div>
+              <h2 class="font-semibold text-sm">DELTAFORCE</h2>
+              <p class="text-gray-400 text-xs">Sports • ⭐ 4.3</p>
+            </div>
+            <div class="text-right">
+              <p class="text-purple-600 dark:text-purple-400 font-bold text-sm">$14.99</p>
+              <button class="btn-add" onclick="addToCart('Goal Rush', 14.99)">Add</button>
+            </div>
+          </div>
+        </article></li>
+
+            <li class="game-card" data-genre="FPS"><article class="card">
+          <div class="card-wrap">
+            <img src="https://i.pinimg.com/1200x/60/55/19/60551968fbc7dfce2b462fce6542d5d3.jpg" alt="Goal Rush" class="card-img-tall"/>
+            <button class="eye-btn" onclick="openPreview('Goal Rush', 14.99, 'Sports • ⭐ 4.3', '', true)">Preview</button>
+          </div>
+          <div class="p-4 flex justify-between items-center fade-up delay-2">
+            <div>
+              <h2 class="font-semibold text-sm">FREEFIRE</h2>
+              <p class="text-gray-400 text-xs">FPS • ⭐ 4.3</p>
+            </div>
+            <div class="text-right">
+              <p class="text-purple-600 dark:text-purple-400 font-bold text-sm">$14.99</p>
+              <button class="btn-add" onclick="addToCart('Goal Rush', 14.99)">Add</button>
+            </div>
+          </div>
+        </article></li>
+
+        
+        <li class="game-card" data-genre="FPS"><article class="card">
+          <div class="card-wrap">
+            <img src="https://i.pinimg.com/1200x/2b/02/f0/2b02f09dda89cfbef21b7bc3eea90fc4.jpg" alt="Goal Rush" class="card-img-tall"/>
+            <button class="eye-btn" onclick="openPreview('Goal Rush', 14.99, 'Sports • ⭐ 4.3', 'The most realistic football simulation ever made. Build your dream team, manage transfers, and compete in 30+ global leagues and tournaments. Feel every goal, every tackle, every moment.', true)">Preview</button>
+          </div>
+          <div class="p-4 flex justify-between items-center fade-up delay-2">
+            <div>
+              <h2 class="font-semibold text-sm">FORTNITE</h2>
+              <p class="text-gray-400 text-xs">FPS • ⭐ 4.3</p>
+            </div>
+            <div class="text-right">
+              <p class="text-purple-600 dark:text-purple-400 font-bold text-sm">$14.99</p>
+              <button class="btn-add" onclick="addToCart('Goal Rush', 14.99)">Add</button>
+            </div>
+          </div>
+        </article></li>
+
+        <li class="game-card" data-genre="Strategy"><article class="card">
+          <div class="card-wrap">
+            <img src="https://i.pinimg.com/1200x/f0/b7/b9/f0b7b9646b0dac43b7203e8f353b54a5.jpg" alt="Terra Build" class="card-img-tall"/>
+            <button class="eye-btn" onclick="openPreview('Terra Build', 19.99, 'Strategy • ⭐ 4.5', 'Build civilizations from scratch on procedurally generated worlds. Manage resources, forge alliances, and wage epic wars across land, sea, and sky. A strategy masterpiece.', true)">Preview</button>
+          </div>
+          <div class="p-4 flex justify-between items-center fade-up delay-2">
+            <div>
+              <h2 class="font-semibold text-sm">CLAN</h2>
+              <p class="text-gray-400 text-xs">Strategy • ⭐ 4.5</p>
+            </div>
+            <div class="text-right">
+              <p class="text-purple-600 dark:text-purple-400 font-bold text-sm">$19.99</p>
+              <button class="btn-add" onclick="addToCart('Terra Build', 19.99)">Add</button>
+            </div>
+          </div>
+        </article></li>
+
+            <li class="game-card" data-genre="Strategy"><article class="card">
+          <div class="card-wrap">
+            <img src="https://i.pinimg.com/1200x/fd/83/d0/fd83d0c4c2db54ac68b1ff7db41ed990.jpg" alt="Terra Build" class="card-img-tall"/>
+            <button class="eye-btn" onclick="openPreview('Terra Build', 19.99, 'Strategy • ⭐ 4.5', 'Build civilizations from scratch on procedurally generated worlds. Manage resources, forge alliances, and wage epic wars across land, sea, and sky. A strategy masterpiece.', true)">Preview</button>
+          </div>
+          <div class="p-4 flex justify-between items-center fade-up delay-2">
+            <div>
+              <h2 class="font-semibold text-sm">MLBB</h2>
+              <p class="text-gray-400 text-xs">Strategy • ⭐ 4.5</p>
+            </div>
+            <div class="text-right">
+              <p class="text-purple-600 dark:text-purple-400 font-bold text-sm">$19.99</p>
+              <button class="btn-add" onclick="addToCart('Terra Build', 19.99)">Add</button>
+            </div>
+          </div>
+        </article></li>
+
+        
+        <li class="game-card" data-genre="Strategy"><article class="card">
+          <div class="card-wrap">
+            <img src="https://i.pinimg.com/736x/7f/1a/f9/7f1af9b2ecdf28c5989640d9314bd293.jpg" alt="Terra Build" class="card-img-tall"/>
+            <button class="eye-btn" onclick="openPreview('Terra Build', 19.99, 'Strategy • ⭐ 4.5', 'Build civilizations from scratch on procedurally generated worlds. Manage resources, forge alliances, and wage epic wars across land, sea, and sky. A strategy masterpiece.', true)">Preview</button>
+          </div>
+          <div class="p-4 flex justify-between items-center fade-up delay-2">
+            <div>
+              <h2 class="font-semibold text-sm">HONOR</h2>
+              <p class="text-gray-400 text-xs">Strategy • ⭐ 4.5</p>
+            </div>
+            <div class="text-right">
+              <p class="text-purple-600 dark:text-purple-400 font-bold text-sm">$19.99</p>
+              <button class="btn-add" onclick="addToCart('Terra Build', 19.99)">Add</button>
+            </div>
+          </div>
+        </article></li>
+
+        <li class="game-card" data-genre="Racing"><article class="card">
+          <div class="card-wrap">
+            <img src="https://i.pinimg.com/1200x/b5/a4/b0/b5a4b0551f55526a0ce607a615819996.jpg" alt="Velocity X" class="card-img-tall"/>
+            <button class="eye-btn" onclick="openPreview('Velocity X', 24.99, 'Racing • ⭐ 4.7', 'Push the limits of speed in hyper-realistic street and track racing. Customize your dream car from 200+ models, race online against rivals worldwide, and climb the global leaderboard.', true)">Preview</button>
+          </div>
+          <div class="p-4 flex justify-between items-center fade-up delay-2">
+            <div>
+              <h2 class="font-semibold text-sm">ASPHALT </h2>
+              <p class="text-gray-400 text-xs">Racing • ⭐ 4.7</p>
+            </div>
+            <div class="text-right">
+              <p class="text-purple-600 dark:text-purple-400 font-bold text-sm">$24.99</p>
+              <button class="btn-add" onclick="addToCart('Velocity X', 24.99)">Add</button>
+            </div>
+          </div>
+        </article></li>
+
+        <li class="game-card" data-genre="Racing"><article class="card">
+          <div class="card-wrap">
+            <img src="https://i.pinimg.com/1200x/52/6d/9b/526d9ba56acec0bf68bc28a8c52eba66.jpg" alt="Goal Rush" class="card-img-tall"/>
+            <button class="eye-btn" onclick="openPreview('Goal Rush', 14.99, 'Sports • ⭐ 4.3', 'The most realistic football simulation ever made. Build your dream team, manage transfers, and compete in 30+ global leagues and tournaments. Feel every goal, every tackle, every moment.', true)">Preview</button>
+          </div>
+          <div class="p-4 flex justify-between items-center fade-up delay-2">
+            <div>
+              <h2 class="font-semibold text-sm">TURISMO</h2>
+              <p class="text-gray-400 text-xs">Racing • ⭐ 4.3</p>
+            </div>
+            <div class="text-right">
+              <p class="text-purple-600 dark:text-purple-400 font-bold text-sm">$14.99</p>
+              <button class="btn-add" onclick="addToCart('Goal Rush', 14.99)">Add</button>
+            </div>
+          </div>
+        </article></li>
+
+        <li class="game-card" data-genre="Racing"><article class="card">
+          <div class="card-wrap">
+            <img src="https://i.pinimg.com/736x/90/76/c4/9076c4ac5d6826bae63bc8e74feaffd9.jpg" alt="Velocity X" class="card-img-tall"/>
+            <button class="eye-btn" onclick="openPreview('Velocity X', 24.99, 'Racing • ⭐ 4.7', 'Push the limits of speed in hyper-realistic street and track racing. Customize your dream car from 200+ models, race online against rivals worldwide, and climb the global leaderboard.', true)">Preview</button>
+          </div>
+          <div class="p-4 flex justify-between items-center fade-up delay-2">
+            <div>
+              <h2 class="font-semibold text-sm">MOTO</h2>
+              <p class="text-gray-400 text-xs">Racing • ⭐ 4.7</p>
+            </div>
+            <div class="text-right">
+              <p class="text-purple-600 dark:text-purple-400 font-bold text-sm">$24.99</p>
+              <button class="btn-add" onclick="addToCart('Velocity X', 24.99)">Add</button>
+            </div>
+          </div>
+        </article></li>
+
+
+        <li class="game-card" data-genre="Sports"><article class="card">
+          <div class="card-wrap">
+            <img src="https://i.pinimg.com/1200x/b4/ed/b4/b4edb41479c5b9dec6fc506624289b66.jpg" alt="Goal Rush" class="card-img-tall"/>
+            <button class="eye-btn" onclick="openPreview('Goal Rush', 14.99, 'Sports • ⭐ 4.3', 'The most realistic football simulation ever made. Build your dream team, manage transfers, and compete in 30+ global leagues and tournaments. Feel every goal, every tackle, every moment.', true)">Preview</button>
+          </div>
+          <div class="p-4 flex justify-between items-center fade-up delay-2">
+            <div>
+              <h2 class="font-semibold text-sm">FIFA </h2>
+              <p class="text-gray-400 text-xs">Sports • ⭐ 4.3</p>
+            </div>
+            <div class="text-right">
+              <p class="text-purple-600 dark:text-purple-400 font-bold text-sm">$14.99</p>
+              <button class="btn-add" onclick="addToCart('Goal Rush', 14.99)">Add</button>
+            </div>
+          </div>
+        </article></li>
+
+        <li class="game-card" data-genre="Sports"><article class="card">
+          <div class="card-wrap">
+            <img src="https://i.pinimg.com/736x/53/b2/64/53b2647be276292eb55aa386ee5a0b45.jpg" alt="Goal Rush" class="card-img-tall"/>
+            <button class="eye-btn" onclick="openPreview('Goal Rush', 14.99, 'Sports • ⭐ 4.3', 'The most realistic football simulation ever made. Build your dream team, manage transfers, and compete in 30+ global leagues and tournaments. Feel every goal, every tackle, every moment.', true)">Preview</button>
+          </div>
+          <div class="p-4 flex justify-between items-center fade-up delay-2 ">
+            <div>
+              <h2 class="font-semibold text-sm">The Spike</h2>
+              <p class="text-gray-400 text-xs">Sports • ⭐ 4.3</p>
+            </div>
+            <div class="text-right">
+              <p class="text-purple-600 dark:text-purple-400 font-bold text-sm">$14.99</p>
+              <button class="btn-add" onclick="addToCart('Goal Rush', 14.99)">Add</button>
+            </div>
+          </div>
+        </article></li>
+
+
+        <li class="game-card" data-genre="Sports"><article class="card">
+          <div class="card-wrap">
+            <img src="https://i.pinimg.com/1200x/b3/b6/91/b3b691ea5246e92b2eaa894588ef0852.jpg" alt="Goal Rush" class="card-img-tall"/>
+            <button class="eye-btn" onclick="openPreview('Goal Rush', 14.99, 'Sports • ⭐ 4.3', 'The most realistic football simulation ever made. Build your dream team, manage transfers, and compete in 30+ global leagues and tournaments. Feel every goal, every tackle, every moment.', true)">Preview</button>
+          </div>
+          <div class="p-4 flex justify-between items-center fade-up delay-2">
+            <div>
+              <h2 class="font-semibold text-sm">VOLTA</h2>
+              <p class="text-gray-400 text-xs">Sports • ⭐ 4.3</p>
+            </div>
+            <div class="text-right">
+              <p class="text-purple-600 dark:text-purple-400 font-bold text-sm">$14.99</p>
+              <button class="btn-add" onclick="addToCart('Goal Rush', 14.99)">Add</button>
+            </div>
+          </div>
+        </article></li>
+
+        <li class="game-card" data-genre="Sports"><article class="card">
+          <div class="card-wrap">
+            <img src="https://i.pinimg.com/736x/b5/f3/96/b5f3966b7c60609aaed3b50d6a9b583e.jpg" alt="Goal Rush" class="card-img-tall"/>
+            <button class="eye-btn" onclick="openPreview('Goal Rush', 14.99, 'Sports • ⭐ 4.3', 'The most realistic football simulation ever made. Build your dream team, manage transfers, and compete in 30+ global leagues and tournaments. Feel every goal, every tackle, every moment.', true)">Preview</button>
+          </div>
+          <div class="p-4 flex justify-between items-center fade-up delay-2">
+            <div>
+              <h2 class="font-semibold text-sm">NBA LIVE</h2>
+              <p class="text-gray-400 text-xs">Sports • ⭐ 4.3</p>
+            </div>
+            <div class="text-right">
+              <p class="text-purple-600 dark:text-purple-400 font-bold text-sm">$14.99</p>
+              <button class="btn-add" onclick="addToCart('Goal Rush', 14.99)">Add</button>
+            </div>
+          </div>
+        </article></li>
+        
+
+      </ul>
+    </section>
+  </main>
+
+<footer class="bg-gray-100 dark:bg-gray-950 border-t border-gray-300 dark:border-gray-800 pt-12 pb-6">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
+
+      
+        <div>
+          <p class="text-xs text-gray-500 uppercase tracking-widest mb-3">Organized by</p>
+          <a href="index.html" class="brand text-2xl font-bold text-purple-400 tracking-widest">LEXSTRO</a>
+          <p class="text-gray-500 text-xs mt-2 leading-relaxed">Your ultimate gaming destination — games, gear &amp; great deals.</p>
+        </div>
+
+        <div>
+          <p class="text-xs text-gray-500 uppercase tracking-widest mb-3">Our Partner</p>
+          <img width="100px" src="https://www.cstad.edu.kh/_next/image?url=%2Fschool-logo%2Fistad-lms-logo.png&w=256&q=75" alt="istad">
+        </div>
+
+        <div>
+          <p class="text-xs text-gray-500 uppercase tracking-widest mb-3">Quick Links</p>
+          <ul class="space-y-2 list-none">
+            <li><a href="../index.html"   class="text-gray-400 hover:text-purple-400 text-sm transition-colors">Home</a></li>
+            <li><a href="games.html"   class="text-gray-400 hover:text-purple-400 text-sm transition-colors">Games</a></li>
+            <li><a href="gear.html"    class="text-gray-400 hover:text-purple-400 text-sm transition-colors">Gear</a></li>
+            <li><a href="about.html"   class="text-gray-400 hover:text-purple-400 text-sm transition-colors">About Us</a></li>
+            <li><a href="contact.html" class="text-gray-400 hover:text-purple-400 text-sm transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        
+        <div>
+          <p class="text-xs text-gray-500 uppercase tracking-widest mb-3">Contact Us</p>
+          <ul class="space-y-2 list-none">
+             <li class="flex items-center gap-2 text-gray-400 text-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+             <a href="mailto:lexstro@gmail.com"> lexstro@gmail.com</a>
+            </li>
+            <li class="flex items-center gap-2 text-gray-400 text-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.1a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:0714097399">+855 714 097 399</a>
+            </li>
+            <li class="flex items-center gap-2 text-gray-400 text-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Phnom Penh, Cambodia
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="border-t border-gray-800 pt-5 flex flex-col md:flex-row justify-between items-center gap-2">
+        <p class="text-gray-600 text-xs">© 2026 LEXSTRO Gaming Store. All rights reserved.</p>
+        <div class="flex gap-4">
+          <a href="#" class="text-gray-600 hover:text-purple-400 text-xs transition-colors">Privacy Policy</a>
+          <a href="#" class="text-gray-600 hover:text-purple-400 text-xs transition-colors">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
